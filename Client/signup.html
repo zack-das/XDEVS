@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/Client/styles/auth.css">
+</head>
+<body>
+        <form action="" id="signupform">
+            <label for="firstname">First Name</label>
+            <input type="text" id="firstname" required>
+            <br>
+            <label for="lastname">Last Name</label>
+            <input type="text" id="lastname" required>
+            <br>
+            <label for="email">Email</label>
+            <input type="email" id="email" required>
+            <br>
+            <label for="password">Password</label>
+            <input type="password" id="password">
+            <br>
+            <label for="confirmpassword">Confirm Password</label>
+            <input type="password" id="confirmpassword">
+            <br>
+            <p id="errorMessage">Passwords do not match</p>
+            <button type="submit" class="btn-signup">Sign Up</button>
+            <p>Already have an account?<br><a href="/Client/login.html">Login</a></p>
+        </form>
+        <!-- Custom Alert Modal -->
+<div id="customAlert" class="alert-modal">
+  <div class="alert-content">
+    <p id="alertMessage"></p>
+    <button id="alertClose" class="alert-button">OK</button>
+  </div>
+</div>
+
+    <script src="/Client/Scripts/signup.js"></script>
+
+</body>
+</html>
