@@ -49,6 +49,8 @@ signupForm.addEventListener("submit", async function(event){
             },
             body: JSON.stringify({
                 firstname,
+
+                
                 lastname,
                 email,
                 password

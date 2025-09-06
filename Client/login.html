@@ -5,11 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="/Client/styles/auth.css">
+    <link rel="stylesheet" href="/Client/styles/styles.css">
 </head>
-<body>
+<body id="loginBody">
     <div>
         <form action="" id="loginform">
-            <h2>Login...</h2>
+            <div class="profile">
+                <h2>Login...</h2>
+                <img src="/img/user.svg" alt="">
+            </div>
+            
             <label for="email">Email</label>
             <input type="email" id="email" placeholder="@gmail.com" title="Email address">
             <br>
@@ -18,8 +23,17 @@
             <br>
             <button type="submit" class="login-btn" id="login-button">Login</button>
             <p>Don't have an account?<br><a href="http://127.0.0.1:5500/Client/signup.html">Sign up</a></p>
+
+            <div class="social-login">
+    <p>Or sign in with:</p>
+    <button id="google-login" class="social-btn google-btn">
+        <i class="fab fa-google"></i> Sign in with Google
+    </button>
+</div>
         </form>
     </div>
     <script src="/Client/Scripts/login.js"></script>
+    <script src= "/Client/Scripts/scripts.js"></script>
+    <script src="/Client/Scripts/auth.js"></script>
 </body>
 </html>

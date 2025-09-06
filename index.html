@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>XDEVS</title>
-    <link rel="stylesheet" href="/Client/styles/styles.css">
+    <link rel="stylesheet" href="./Client/styles/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -12,22 +12,29 @@
 <link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="icon" href="favicon.ico" type="image/x-icon" sizes="16x16 32x32">
 <link href="https://fonts.googleapis.com/css2?family=Tektur:wght@400..900&display=swap" rel="stylesheet">
 </head>
 <body id="themes">
     <nav>
         <div class="logo">XDEVS</div>
-         
         
         <ul class="nav-bar">
             <li class="hideOnMobile"><a href="#home">Home</a></li>
             <li class="hideOnMobile"><a href="#about">About</a></li>
             <li class="hideOnMobile"><a href="#service">Services</a></li>
             <li class="hideOnMobile"><a href="#contact">Contact</a></l>
-            <li class="hideOnMobile"><a id="desktopLogin" href="#">Login</a></li>
+           <li class="hideOnMobile"><a id="desktopLogin" href="/Client/login.html">Login</a></li> 
+           <li class="hideOnMobile" id="desktopLogout" style="display: none;"><a href="#" id="logoutLink">Logout</a></li>
+            <li class="hideOnMobile" id="themeSwitch">
+                <img id="dark" src="moon.svg" alt="">
+                <img id="light" src="sun.svg" alt="">
+            </li>
             <li id="sideMenu"><i class="fa-solid fa-bars"></i></li>
             <li id="closeMenu"><i class="fa-solid fa-circle-xmark"></i></li>
         </ul>
+        
+        
     </nav>
         <ul id="sidebar">
             <li><a href="#home">Home </i></a></li>
@@ -35,6 +42,7 @@
             <li><a href="#service">Services</a></li>
             <li><a href="#contact">Contact</a></li>
             <li><button id="login-btn" type="button">Login</button></li>
+            <li><button id="logout-btn" type="button" style="display: none;">Logout</button></li>
         </ul>
 
 <!---Home section start-->
@@ -57,198 +65,209 @@
                 <p>Tailored solutions: No templates, just unique designs.</p>
                 <p>Performance-Driven: Speed and functionality optimized.</p>
                 <p>Client-Centric Approach: Your vision, our execution.</p>
+    
             </div>
         </div>
     </div>
 </section>
 <!--Home end-->
 
-<!--About us section start-->
-<section class="about-section" id="about">
-    <div class="about-container">
-        <h1>"Turning Ideas into Digital Reality"</h1>
-        <div class="about-story">
-        <h2>Our Story:</h2>
-        <p>Welcome to XDEVS. Founded in 2025, we're<br>a passionate team of web developers, designers
-            and digital strategists dedicated to crafting exceptional experiences.
-        </p>
-        </div>
-        <div class="about-mission">
-            <h2>Our Mission:</h2>
-        <p>To empower businesses with cutting-edge websites that are visually stunning, user-friendly, and built for success.</p>
-        </div>
-        <div class="work">
-            <h1>Why Work with Us?</h1>
-            <div class="work-container">
-                <div class="work-card">
-                    <h3>Expert Team</h3>
-                    <div class="card-img">
-                        <img src="/img/expert team.jpeg" alt="">
+<!-- displays only if  user login is succcesfull  -->
+<div class="full-content">
+    <!--About us section start-->
+    <section class="about-section" id="about">
+        <div class="about-container">
+            <h1>"Turning Ideas into Digital Reality"</h1>
+            <div class="about-story">
+            <h2>Our Story:</h2>
+            <p id="darkTheme">Welcome to XDEVS. Founded in 2025, we're<br>a passionate team of web developers, designers
+                and digital strategists dedicated to crafting exceptional experiences.
+            </p>
+            </div>
+            <div class="about-mission">
+                <h2>Our Mission:</h2>
+            <p id="darkTheme2">To empower businesses with cutting-edge websites that are visually stunning, user-friendly, and built for success.</p>
+            </div>
+            <div class="work">
+                <h1>Why Work with Us?</h1>
+                <div class="work-container">
+                    <div class="work-card">
+                        <h3>Expert Team</h3>
+                        <div class="card-img">
+                            <img src="/img/expert team.jpeg" alt="">
+                        </div>
+                        <p>Years of industry experience.</p>
                     </div>
-                    <p>Years of industry experience.</p>
-                </div>
 
-                <div class="work-card">
-                    <h3>Transparent Process:</h3>
-                    <div class="card-img">
-                        <img src="/img/transparency.jpeg" alt="">
+                    <div class="work-card">
+                        <h3>Transparent Process:</h3>
+                        <div class="card-img">
+                            <img src="/img/transparency.jpeg" alt="">
+                        </div>
+                        <p>Clear communication, no surprises.</p>
                     </div>
-                    <p>Clear communication, no surprises.</p>
-                </div>
 
-                <div class="work-card">
-                     <h3>Proven Results:</h3>
-                     <div class="card-img">
-                        <img src="/img/5star thumbs.jpeg" alt="">
-                     </div>
-                    <p>Happy clients, thriving websites.</p>
+                    <div class="work-card2">
+                        <h3>Proven Results:</h3>
+                        <div class="card-img">
+                            <img src="/img/5star thumbs.jpeg" alt="">
+                        </div>
+                        <p>Happy clients, thriving websites.</p>
+                    </div>
                 </div>
             </div>
+            <h3>Meet the Team:</h3>
         </div>
-        <h3>Meet the Team:</h3>
-    </div>
-</section>
-<!--About section end-->
+    </section>
+    <!--About section end-->
 
-<!--Service Section-->
-<section class="services-section" id="service">   
-    <div class="our-services">
-         <h1>What We Offer</h1>
-        <div class="services-container">
-            <div class="service">
-                <h2>Custom Website Development</h2>
+    <!--Service Section-->
+    <section  class="services-section" id="service">   
+        <div class="our-services">
+            <h1 id="theme">What We Offer</h1>
+            <div class="services-container">
+                <div class="services">
+                    <h2>Custom Website Development</h2>
+                    <div class="service-img">
+                        <img src="/img/custom.jpeg" alt="">
+                    </div>
+                    <p>Tailored designs from scratch <br>Built for scalability</p>
+                </div>
+
+                <div class="services">
+                    <h2>E-Commerce Solutions</h2>
                 <div class="service-img">
-                    <img src="/img/custom.jpeg" alt="">
+                    <img src="/img/ecommerce.jpeg" alt="">
                 </div>
-                <p>Tailored designs from scratch <br>Built for scalability</p>
-            </div>
-
-            <div class="service">
-                <h2>E-Commerce Solutions</h2>
-            <div class="service-img">
-                <img src="/img/ecommerce.jpeg" alt="">
-            </div>
-                <p>Secure, user-friendly online stores</p>
-            </div>
-
-            <div class="service">
-                <h2>Responsive Web Designs</h2>
-                <div  class="service-img">
-                    <img src="/img/device responsiveness.jpeg" alt="">
+                    <p>Secure, user-friendly online stores</p>
                 </div>
-                <p>Flawless performance on all devices</p>
-            </div>
 
-            <div class="service">
-                <h2>SEO & Digital Marketing</h2>
-                <div class="service-img">
-                    <img src="/img/SEO.jpeg" alt="">
+                <div class="services">
+                    <h2>Responsive Web Designs</h2>
+                    <div  class="service-img">
+                        <img src="/img/device responsiveness.jpeg" alt="">
+                    </div>
+                    <p>Flawless performance on all devices</p>
                 </div>
-                <p>On-page SEO, content strategy, and analytics</p>
-            </div>
 
-            <div class="service">
-                <h2>Website Maintenance & Support</h2>
-                <div class="service-img">
-                    <img src="/img/wertd.jpeg" alt="">
+                <div class="services">
+                    <h2>SEO & Digital Marketing</h2>
+                    <div class="service-img">
+                        <img src="/img/SEO.jpeg" alt="">
+                    </div>
+                    <p>On-page SEO, content strategy, and analytics</p>
                 </div>
-                <p>Regular updates, security checks, and backups.</p>
+
+                <div class="services">
+                    <h2>Website Maintenance & Support</h2>
+                    <div class="service-img">
+                        <img src="/img/wertd.jpeg" alt="">
+                    </div>
+                    <p>Regular updates, security checks, and backups.</p>
+                </div>
+            </div>
+            <div class="service-cta">
+                <p>"Need a specific solution?"</p>
+            <button type="button"><a style="text-decoration: none;"  href="https://wa.me/+254757512998?text=Hello%20welcome%20to%20%20XDEVS%20service,%20How%20may%20we%20help%20you" target="_blank">Let's discuss your project!</a></button>
             </div>
         </div>
-        <div class="service-cta">
-             <p>"Need a specific solution?"</p>
-         <button type="button">Let's discuss your project!</button>
+    </section>
+    <!--Service section end-->
+    <!--Contact section start-->
+    <section class="contact-section" id="contact">
+    <div class="contact-wrapper">
+            <div class="contact-container"  >
+                <h2 class="contact-title">Contact Us</h2>
+                <p class="contact-subtitle">We'll get back to you within 24 hours</p>
+                
+                <form class="contact-form" id= "contactform">
+                    <div class="form-group">
+                        <div class="input-icon">
+                            <i class="fas fa-user"></i>
+                            <input type="text" id="fullname" placeholder="Full Name" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <div class="input-icon">
+                            <i class="fas fa-envelope"></i>
+                            <input type="email" id="email" placeholder="Email Address" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <div class="input-icon">
+                            <i class="fas fa-phone"></i>
+                            <input type="tel"  id="phone" placeholder="Phone Number">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <div class="textarea-icon">
+                            <i class="fas fa-comment"></i>
+                            <textarea id="message" spellcheck="false" placeholder="Your Message" rows="5" required></textarea>
+                        </div>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn">
+                        <i class="fas fa-paper-plane"></i> Send Message
+                    </button>
+                </form>
+            </div>
         </div>
-    </div>
-</section>
-<!--Service section end-->
-<!--Contact section start-->
-<section class="contact-section" id="contact">
-  <div class="contact-wrapper">
-        <div class="contact-container">
-            <h2 class="contact-title">Contact Us</h2>
-            <p class="contact-subtitle">We'll get back to you within 24 hours</p>
-            
-            <form class="contact-form">
-                <div class="form-group">
-                    <div class="input-icon">
-                        <i class="fas fa-user"></i>
-                        <input type="text" placeholder="Full Name" required>
-                    </div>
-                </div>
-                
-                <div class="form-group">
-                    <div class="input-icon">
-                        <i class="fas fa-envelope"></i>
-                        <input type="email" placeholder="Email Address" required>
-                    </div>
-                </div>
-                
-                <div class="form-group">
-                    <div class="input-icon">
-                        <i class="fas fa-phone"></i>
-                        <input type="tel" placeholder="Phone Number">
-                    </div>
-                </div>
-                
-                <div class="form-group">
-                    <div class="textarea-icon">
-                        <i class="fas fa-comment"></i>
-                        <textarea placeholder="Your Message" rows="5" required></textarea>
-                    </div>
-                </div>
-                
-                <button type="submit" class="submit-btn">
-                    <i class="fas fa-paper-plane"></i> Send Message
-                </button>
-            </form>
+    </section>
+    <!--Contact-section end-->
+        
+    <!--Footer Section-->
+    <footer class="site-footer">
+    <div class="footer-container">
+            <div class="footer-col">
+            <h3>XDevs</h3>
+            <p>Building digital experiences that drive growth and engagement.</p>
+            <div class="footer-contact">
+                <ul>
+                <li><i class="fa-solid fa-envelope"></i><a href="#"></a>Email Us</li>
+                <li id="phoneCall"><i class="fa-solid fa-phone"></i>+254 7112 950 49</li>
+                <li><i class="fa-solid fa-location-dot"></i>Nairobi, Kenya</li>
+                </ul>
+            </div>
         </div>
-    </div>
-</section>
-<!--Contact-section end-->
-    
-<!--Footer Section-->
-<footer class="site-footer">
-<div class="footer-container">
+
         <div class="footer-col">
-        <h3>XDevs</h3>
-        <p>Building digital experiences that drive growth and engagement.</p>
-        <div class="footer-contact">
+            <h3>Services</h3>
             <ul>
-            <li><i class="fa-solid fa-envelope"></i><a href="#"></a>Email Us</li>
-            <li><i class="fa-solid fa-phone"></i>+254 7112 950 49</li>
-            <li><i class="fa-solid fa-location-dot"></i>Nairobi, Kenya</li>
+                <li><a href="#">Custom Web Development</a></li>
+                <li><a href="#">E-Commerce Solutions</a></li>
+                <li><a href="#">SEO Optimization</a></li>
+                <li><a href="#">Website Maintenance</a></li>
+                <li><a href="#">UI/UX Design</a></li>
             </ul>
         </div>
-    </div>
 
-    <div class="footer-col">
-        <h3>Services</h3>
-        <ul>
-            <li><a href="#">Custom Web Development</a></li>
-            <li><a href="#">E-Commerce Solutions</a></li>
-            <li><a href="#">SEO Optimization</a></li>
-            <li><a href="#">Website Maintenance</a></li>
-            <li><a href="#">UI/UX Design</a></li>
-        </ul>
-    </div>
-
-    <div class="footer-col">
-        <h3>Stay Updated</h3>
-        <p>Subscribe to our newsletter for tech insights and offers</p>
-        <form class="newsletter-form">
-            <input type="email" placeholder="Your Email">
-            <button type="submit">Subscribe</button>
-        </form>
-        <div class="social-links">
-            <a href="#" title="Twitter"><i class="fa-brands fa-x-twitter" aria-hidden="true"></i><span class="sr-only">Twitter</span></a>
-            <a href="#" title="Facebook"><i class="fa-brands fa-facebook" aria-hidden="true"></i><span class="sr-only">Facebook</span></a>
-            <a href="#" title="Instagram"><i class="fa-brands fa-instagram" aria-hidden="true"></i><span class="sr-only">Instagram</span></a>
-            <a href="#" title="LinkedIn"><i class="fa-brands fa-linkedin" aria-hidden="true"></i><span class="sr-only">LinkedIn</span></a>
+        <div class="footer-col">
+            <h3>Stay Updated</h3>
+            <p>Subscribe to our newsletter for tech insights and offers</p>
+            <form class="newsletter-form">
+                <input type="email" placeholder="Your Email">
+                <button type="submit">Subscribe</button>
+            </form>
+            <div class="social-links">
+                <a href="#" title="Twitter"><i class="fa-brands fa-x-twitter" aria-hidden="true"></i><span class="sr-only">Twitter</span></a>
+                <a href="#" title="Facebook"><i class="fa-brands fa-facebook" aria-hidden="true"></i><span class="sr-only">Facebook</span></a>
+                <a href="#" title="Instagram"><i class="fa-brands fa-instagram" aria-hidden="true"></i><span class="sr-only">Instagram</span></a>
+                <a href="#" title="LinkedIn"><i class="fa-brands fa-linkedin" aria-hidden="true"></i><span class="sr-only">LinkedIn</span></a>
+            </div>
         </div>
     </div>
+    </footer>
 </div>
-</footer>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+<script>
+  emailjs.init('_7ZxiSmy7xznzyi6y');
+</script>
+<script src="/Client/Scripts/email.js"></script>
 <script src="/Client/Scripts/script.js"></script>
+<script src="/Client/Scripts/login.js"></script>
+ <script src="/Client/Scripts/auth.js"></script>
 </body>
 </html>

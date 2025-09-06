@@ -24,10 +24,11 @@ loginForm.addEventListener("submit", async function(event){
                 password: password
             })
         })
+        
         const data = await response.json();
         if(response.ok){
             alert('login successful! Welcome ,')
-            window.location.href = 'index.html'
+            window.location.href = 'http://127.0.0.1:5500/index.html'
         }else{
             alert(data.message || 'login failed')
         }
@@ -36,4 +37,8 @@ loginForm.addEventListener("submit", async function(event){
         console.error('Error', error)
         alert('Something went wrong during login')
     }
-})
+});
+
+
+
+ 

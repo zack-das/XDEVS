@@ -26,6 +26,86 @@ mediaQuery.addEventListener('change', (event) => {
 })
 
 
+const nightMode = document.getElementById('dark');
+nightMode.addEventListener('click', () => {
+    // Toggle a 'dark-mode' class on the body for night mode
+    document.querySelector('#themeSwitch').style.backgroundColor = 'white';
+    nightMode.style.transform = 'translateX(.8rem)';
+    nightMode.style.transition = 'transition: ease-in .3s;'
+    nightMode.style.display = 'none'
+    const lightMode = document.getElementById('light');
+    lightMode.style.display = 'block';
+    lightMode.style.transform = 'translateX(1.4rem)';
+    const darkMode = document.querySelector('.about-section');
+    if(darkMode){
+        darkMode.style.backgroundColor = '#37474F';
+        const darkCtnMode = document.querySelector('.contact-section');
+        darkCtnMode.style.backgroundColor = '#37474F';
+           const servicesTheme = document.querySelector('.services-section');
+         servicesTheme.style.backgroundColor = '#37474F';
+        document.querySelector(".contact-container").style.backgroundColor = '#fff9f9d3';
+         
+    } 
+   
+
+    const colorText = document.querySelector('#darkTheme');
+    if(colorText){
+        colorText.style.color = 'white';
+    }
+    const colorText2 = document.querySelector('#darkTheme2');
+    if(colorText2){
+        colorText2.style.color = 'white';
+    }
+    const changeTheme = document.getElementById('theme');
+    if(changeTheme){
+          changeTheme.style.color = 'white';
+    }
+   
+    
+    
+    
+});
+
+const dayMode =document.getElementById('light');
+dayMode.addEventListener('click', () => {
+    document.querySelector('#themeSwitch').style.backgroundColor = 'black';
+    dayMode.style.transform = 'translateX(-0.1rem)';
+    dayMode.style.transition = 'transition: ease-in .3s;'
+    dayMode.style.display = 'none'
+
+     const day = document.getElementById('dark');
+    day.style.display = 'block';
+    day.style.transform = 'translateX(-0.1rem)';
+
+     const dayTheme = document.querySelector('.about-section');
+    if(dayTheme){
+        dayTheme.style.backgroundColor = 'white';
+        const darkCtnMode = document.querySelector('.contact-section');
+        darkCtnMode.style.backgroundColor = 'white';
+    }
+    const colorText = document.querySelector('#darkTheme');
+    if(colorText){
+        colorText.style.color = 'black';
+    }
+    const colorText2 = document.querySelector('#darkTheme2');
+    if(colorText2){
+        colorText2.style.color = 'black';
+    }
+
+    const darkMode2 = document.getElementById('service');
+    darkMode2.style.backgroundColor = 'white';
+
+    const changeTheme = document.getElementById('theme');
+    if(changeTheme){
+          changeTheme.style.color = 'black';
+    }
+    const newTheme = document.getElementById('serviceTheme');
+        newTheme.style.backgroundColor = '#141319';
+    
+
+})
+
+
 const closeButton = document.getElementById('closeMenu');
 
     closeButton.addEventListener('click', () => {
@@ -52,9 +132,78 @@ exitMenu.addEventListener('click', () => {
         showBar.style.display = 'flex';
     }
 });
-const loginB = document.getElementById('login-btn')
+const loginB = document.getElementById('loginBtn')
 loginB.addEventListener('click', () => {
-    window.location.href = "/Client/login.html"
+    window.location.href = "/Client/login.html";
 })
 
+const copyContact = document.getElementById('phoneCall');
+copyContact.addEventListener('copy', () => {
+    alert('Contact copied to clipboard');
+});
+
+
+// Check login status on page load
+document.addEventListener('DOMContentLoaded', function() {
+    checkLoginStatus();
     
+    // Set up logout functionality
+    document.getElementById('logoutLink')?.addEventListener('click', logout);
+    document.getElementById('logout-btn')?.addEventListener('click', logout);
+});
+
+// Function to check login status
+function checkLoginStatus() {
+    const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
+    
+    if (isLoggedIn) {
+        // Show all content
+        document.querySelector('.full-content').style.display = 'block';
+        
+        // Update nav buttons
+        document.getElementById('desktopLogin').style.display = 'none';
+        document.getElementById('desktopLogout').style.display = 'block';
+        document.getElementById('login-btn').style.display = 'none';
+        document.getElementById('logout-btn').style.display = 'block';
+    } else {
+        // Hide protected content
+        document.querySelector('.full-content').style.display = 'none';
+        
+        // Update nav buttons
+        document.getElementById('desktopLogin').style.display = 'block';
+        document.getElementById('desktopLogout').style.display = 'none';
+        document.getElementById('login-btn').style.display = 'block';
+        document.getElementById('logout-btn').style.display = 'none';
+    }
+}
+
+
+document.querySelector('.newsletter-form')?.addEventListener('submit', async function(event) {
+    event.preventDefault();
+    
+    const email = this.querySelector('input[type="email"]').value;
+    
+    try {
+        const response = await fetch("http://localhost:5500/subscribe", {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ email })
+        });
+        
+        const data = await response.json();
+        
+        if (response.ok) {
+            alert('Subscription successful! Thank you.');
+            this.reset();
+        } else {
+            alert(data.message || 'Subscription failed');
+        }
+    } catch (error) {
+        console.error('Error', error);
+        alert('Something went wrong with your subscription');
+    }
+});
+
+

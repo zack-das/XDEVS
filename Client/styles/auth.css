@@ -7,7 +7,7 @@ form {
     display: flex;
     flex-direction: column;
     border-radius: 1rem;
-    background: #f8fbff;
+    background: #f8fbff2f;
     box-shadow: 0 4px 24px rgba(0, 0, 0, 0.07);
 }
 
@@ -36,6 +36,18 @@ input:focus {
     background: #e6faff;
 }
 
+.profile{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+.profile img{
+    width: 4.2rem;
+    height: 4.2rem;
+    border: 1px solid #00eaff;
+    border-radius: 2.8rem;
+}
 .login-btn {
     background: linear-gradient(90deg, #00bcd4 0%, #00eaff 100%);
     color: #fff;
@@ -44,6 +56,7 @@ input:focus {
     margin-bottom: 1.5rem;
     border-radius: .4rem;
     border: none;
+    
     font-family: 'Segoe UI', Arial, sans-serif;
     font-weight: 600;
     cursor: pointer;
@@ -54,6 +67,7 @@ input:focus {
 .login-btn:hover {
     background: linear-gradient(90deg, #00eaff 0%, #00bcd4 100%);
     transform: translateY(-2px) scale(1.02);
+    box-shadow:  0 0 15px 5px rgba(4, 189, 221, 0.61);
 }
 
 p {
@@ -152,4 +166,81 @@ label{
 /* Success State */
 .alert-modal.success .alert-content {
   border-top: 4px solid #4CAF50;
+}
+#loginBody{
+ background-image: url(/img/sebastian-svenson-LpbyDENbQQg-unsplash.jpg);
+ background-size: cover;
+ background-position: center;
+}
+
+/* Social Login Styles */
+.social-login {
+    margin: 20px 0;
+    text-align: center;
+}
+
+.social-login p {
+    margin-bottom: 15px;
+    color: #666;
+    position: relative;
+}
+
+.social-login p::before,
+.social-login p::after {
+    content: "";
+    position: absolute;
+    height: 1px;
+    width: 30%;
+    background: #ddd;
+    top: 50%;
+}
+
+.social-login p::before {
+    left: 0;
+}
+
+.social-login p::after {
+    right: 0;
+}
+
+.social-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s;
+    margin-bottom: 10px;
+}
+
+.social-btn i {
+    margin-right: 10px;
+    font-size: 18px;
+}
+
+.google-btn {
+    background: #4285F4;
+    color: white;
+}
+
+.google-btn:hover {
+    background: #357ABD;
+}
+
+/* Add to main.css */
+.user-profile {
+    display: flex;
+    align-items: center;
+    margin-left: 20px;
+}
+
+.profile-pic {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-right: 10px;
 }

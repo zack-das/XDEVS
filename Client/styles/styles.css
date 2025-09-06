@@ -6,7 +6,9 @@
 body{
     min-height: 100vh;
     width: 100%;
+    background-color: rgba(255, 255, 255, 0.856);
 }
+
 :root {
     --main-color: rgb(10, 3, 41);
     --space-p-color: rgb(142, 119, 153);
@@ -60,6 +62,31 @@ nav ul{
 .nav-bar li{
     color: white;
     list-style: none;
+}
+
+nav img{
+    color: white;
+    background-color: rgb(65, 65, 68);
+    width: 1.1rem;
+    height: 1.1rem;
+    border-radius: 1rem;
+    cursor: pointer;
+}
+#light{
+    display: none;
+    background-color: rgb(255, 255, 255);
+}
+#dark{
+    background-color: white;
+}
+#themeSwitch{
+    width: 2.9rem;
+    height: 1.4rem;
+    border:2px solid rgb(0, 238, 255);
+    border-radius: 1rem;
+    gap: 1.2rem;
+    cursor: pointer;
+    
 }
 
 
@@ -205,6 +232,7 @@ nav ul{
     opacity: 0;
     visibility: hidden;
     transition: all 0.3s ease;
+    -webkit-backdrop-filter: blur(2px);
     backdrop-filter: blur(2px);
 }
 
@@ -232,16 +260,20 @@ nav ul{
     transform: translateZ(0.3rem);
 }
 #desktopLogin{
-     width: 6rem;
-    height: 2.5rem;
     padding: 2px;
     color: #ffffff;
-    background:#000000;
     font-family: "Exo 2", sans-serif;
     font-size: 1.2rem;
-    border-radius: 0.2rem;
-    border:1px solid #00bcf5;
     cursor: pointer;
+}
+#desktopLogout{
+    display: none; 
+    padding: 2px;
+    color: #ffffff;
+    font-family: "Exo 2", sans-serif;
+    font-size: 1.2rem;
+    cursor: pointer;
+
 }
 
 
@@ -249,18 +281,19 @@ nav ul{
     display: flex;
     width: 100%;
     padding-top: 80px;
-    background: url(/img/desmumtz13.jpg);
+    
     background-size: cover;
     background-repeat: no-repeat;
-    clip-path: polygon(0 0, 20% 0, 80% 0, 100% 0, 100% 80%, 100% 100%, 0 100%, 0 80%);
 }
 .home-container{
     width: 100%;
     padding: 2rem;
     margin-bottom: 4rem;
+    background-image: url("./img/desmumtz13.jpg");
 }
 .home-text{
     background: rgba(87, 86, 86, 0.226);
+    -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
     padding: 4rem;
     border-radius: 2rem;
@@ -311,9 +344,10 @@ nav ul{
 /* About section stylings start */
 .about-section{
     padding-top: 4rem;
-    background: #fcfcfc;
+    background: #fff9f9;
     background-size: cover;
     background-repeat: no-repeat;
+    color: #1e1c25;
 }
 .about-container h1{
     font-family: "Exo2", sans-serif;
@@ -347,6 +381,7 @@ nav ul{
     display: flex;
     flex-direction: column;
     background: rgba(166, 216, 199, 0.384);
+    -webkit-backdrop-filter: blur(30px);
     backdrop-filter: blur(30px);
     margin: 0 1rem 2rem 1rem ;
     padding: 2rem;
@@ -374,7 +409,7 @@ nav ul{
     gap: 2rem;
 }
 .work-card{
-    display: flex;
+    display: flexbox;
     flex-direction: column;
     align-items: center;
     -webkit-backdrop-filter: blur(20px);
@@ -383,6 +418,31 @@ nav ul{
     backdrop-filter: blur(20px);
     border: 1px solid #263238;
     border-radius: 2rem;
+}
+.work-card2{
+    width: 20rem;
+    align-items: center;
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+    background: #4b5757;
+    backdrop-filter: blur(20px);
+    border: 1px solid #263238;
+    border-radius: 2rem;
+}
+.work-card2 h3{
+    color: #00ffd5;
+    text-shadow: #000000;
+    font-size: 1.4rem;
+    font-family: "Tektur";
+    text-align: center;
+    padding: 1rem;
+}
+.work-card2 p{
+     font-family:sans-serif;
+    text-align: center;
+    margin: 1rem;
+    font-size: 1.2rem;
+    color: var(--text-color);
 }
 .work-card h3{
     color: #00ffd5;
@@ -432,11 +492,11 @@ nav ul{
 .services-container{
     display:flex;
     flex-wrap: wrap;
-    justify-content: center;
-    align-items:center;
     gap: 2rem;
+    justify-content: center;
+    margin: 2rem;
 }
-.service{
+.services{
     display: flex;
     flex-direction: column;
     align-items:center;
@@ -444,13 +504,14 @@ nav ul{
     width: 22rem;
     height: 18rem;
     background: #ffffff;
+    -webkit-backdrop-filter: blur(20px);
     backdrop-filter: blur(20px);
     box-shadow: 2px 2px 4px #00ffd5;
     border: 1px solid;
     border-radius: 2rem;
-    padding-bottom: 12rem;
+    padding-bottom: 18rem;
 }
-.service h2{
+.services h2{
     color: #00ffd5;
     text-shadow: #000000;
     font-size: 1.2rem;
@@ -458,11 +519,11 @@ nav ul{
     text-align: center;
     padding: 1rem;
 }
-.service-img{
+.services-img{
     width: 20rem;
     height: 14rem;
 }
-.service-img img{
+.services-img img{
     width: 100%;
     height: 100%;
     border-radius: .4rem;
@@ -512,14 +573,14 @@ nav ul{
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    padding: 20px;
+    padding: 40px 0 20px 0;
 }
 
 /* Form Container */
 .contact-container {
     background: white;
     border-radius: 10px;
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 30px rgba(4, 167, 231, 0.781);
     padding: 20px;
     width: 100%;
     max-width: 500px;
@@ -606,7 +667,7 @@ input:focus, textarea:focus {
 }
 /* Submit Button */
 .submit-btn {
-    background: #04b0bd;
+    background: #00d9ff;
     color: white;
     border: none;
     padding: 12px 20px;
@@ -624,7 +685,9 @@ input:focus, textarea:focus {
 }
 
 .submit-btn:hover {
-    background: #019292e5;
+    background: #0188921a;
+    color: black;
+    border: 1px solid #00d9ff ;
     transform: translateY(-2px);
 }
 
@@ -647,6 +710,11 @@ input:focus, textarea:focus {
     input, textarea {
         padding: 12px 12px 12px 40px;
     }
+}
+#nightmode{
+    color: yellow;
+    list-style: none;
+    cursor: pointer;
 }
 /* Footer stylings */
 .site-footer{
@@ -853,6 +921,28 @@ input:focus, textarea:focus {
 }
 
 
+/* Add this to your styles.css */
+.full-content {
+    display: none; /* Hidden by default */
+}
+
+/* Show when logged in */
+body.logged-in .full-content {
+    display: block;
+}
+
+/* Hide login button when logged in */
+body.logged-in #desktopLogin,
+body.logged-in #login-btn {
+    display: none !important;
+}
+
+/* Show logout button when logged in */
+body.logged-in #desktopLogout,
+body.logged-in #logout-btn {
+    display: block !important;
+}
+
 /* Desktop styles */
 @media (min-width: 801px) {
     #sideMenu{
@@ -867,3 +957,49 @@ input:focus, textarea:focus {
     }
     
 }
+/* Display of other parts of the website set to none and will only show if user login  is succesfull */
+
+#login-request{
+    color: #ffffff;
+    font-family: "Exo 2", sans-serif;
+    font-size: 1.6rem;
+    text-align: center; 
+    
+}
+#loginBtn{
+      width: 4rem;
+    height: 2.rem;
+    padding: 2px;
+    color: #ffffff;
+    background:#000000;
+    font-family: "Exo 2", sans-serif;
+    font-size: 1.2rem;
+    border-radius: 0.2rem;
+    border:1px solid #00bcf5;
+    cursor: pointer;
+}
+
+#signupOpt a{
+    text-decoration: none;
+     color: #ffffff;
+    width: 4rem;
+    height: 2.rem;
+    padding: 2px;
+    font-family: "Exo 2", sans-serif;
+    font-size: 1.2rem;
+    border-radius: 0.2rem;
+    border:1px solid #00bcf5;
+    cursor: pointer;
+    margin-top: 2rem;
+
+}
+#signupOpt{
+    text-align: center;
+    margin-top: 2rem;
+}
+#signupOpt span{
+    color: #00bcf5;
+    font-weight: 700;
+    text-shadow: 4px 4px 8px #002fff;
+}
+
