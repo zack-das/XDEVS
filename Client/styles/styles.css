@@ -200,7 +200,7 @@ nav img{
     color: #00bcf5;
 }
 
-/* Login Button */
+/*/* Login Button */
 #login-btn {
     width: calc(100% - 40px);
     margin: 20px auto;
@@ -218,7 +218,7 @@ nav img{
 #login-btn:hover {
     background: rgba(0, 188, 245, 0.2);
     border-color: rgba(0, 188, 245, 0.5);
-}
+}*/
 
 /* Overlay */
 .sidebar-overlay {
@@ -241,7 +241,7 @@ nav img{
     visibility: visible;
 }
 
-#login-btn{
+/*#login-btn{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -275,7 +275,7 @@ nav img{
     cursor: pointer;
 
 }
-
+*/
 
 .home-section{
     display: flex;
@@ -289,7 +289,7 @@ nav img{
     width: 100%;
     padding: 2rem;
     margin-bottom: 4rem;
-    background-image: url("./img/desmumtz13.jpg");
+    background-image: url("/img/desmumtz13.jpg");
 }
 .home-text{
     background: rgba(87, 86, 86, 0.226);
@@ -921,15 +921,6 @@ input:focus, textarea:focus {
 }
 
 
-/* Add this to your styles.css */
-.full-content {
-    display: none; /* Hidden by default */
-}
-
-/* Show when logged in */
-body.logged-in .full-content {
-    display: block;
-}
 
 /* Hide login button when logged in */
 body.logged-in #desktopLogin,
