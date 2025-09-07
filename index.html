@@ -216,6 +216,29 @@
             </div>
         </div>
     </section>
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<script>
+  (function(){
+    emailjs.init("KEVezc2AumI1yw-_b");
+  })();
+
+  document.getElementById("contactform").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    emailjs.send("service_qqoucry", "template_kjxwbr7", {
+      fullname: document.getElementById("fullname").value,
+      email: document.getElementById("email").value,
+      phone: document.getElementById("phone").value,
+      message: document.getElementById("message").value
+    })
+    .then(function(response) {
+       alert("Message sent successfully!");
+    }, function(error) {
+       alert("Failed to send message: " + JSON.stringify(error));
+    });
+  });
+</script>
+
     <!--Contact-section end-->
         
     <!--Footer Section-->
